@@ -1,7 +1,7 @@
 ---
 ---
 
-<section class="min-h-dvh text-xl md:text-5xl place-content-center place-items-center">
+<section class="snapper min-h-dvh text-xl md:text-5xl place-content-center place-items-center">
   <div>
     <h1>
       Hi 👋, I'm Joenz Kim-Chan
@@ -22,6 +22,11 @@
     </div>
   </div>
 </section>
+<style>
+.snapper {
+  scroll-snap-align: start;
+}
+</style>
 <script>
   import Typed from 'typed.js';
   var typed = new Typed('#typed', {

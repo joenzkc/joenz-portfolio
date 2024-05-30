@@ -2,13 +2,10 @@
 const experiences = await Astro.glob("../content/experiences/*.md")
 
 experiences.sort((a, b) => b.frontmatter.order - a.frontmatter.order)
-experiences.forEach(exp => {
-  console.log(exp.frontmatter.skills)
-})
 ---
 
 
-<section class="min-h-screen w-full text-gray-100 flex flex-col items-center justify-center">
+<section class="snapper min-h-screen w-full text-gray-100 flex flex-col items-center justify-center">
   <div class="animated mx-auto max-w-4xl flex flex-col items-center justify-center rounded-lg shadow-lg p-8 bg-slate-800">
     <h2 class="text-4xl font-semibold mt-4 md:mt-0">Experiences</h2>
     <ol class="relative border-s border-gray-200 dark:border-gray-700 m-2 leading-relaxed">         
@@ -45,5 +42,9 @@ experiences.forEach(exp => {
 .isVisible {
   transform: none;
      opacity: 1;
+}
+
+.snapper {
+  scroll-snap-align: start;
 }
 </style>

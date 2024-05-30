@@ -20,17 +20,21 @@ const { title, siteName, siteDescription } = Astro.props
 		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<div
-			class="bg-slate-900"
-		>
-			<div class="grid min-h-dvh grid-cols-1 place-content-center place-items-center text-gray-200">
-				<slot />
-			</div>
+		<div class="snap-container grid min-h-dvh bg-slate-900 grid-cols-1 place-content-center place-items-center text-gray-200">
+			<slot />
 		</div>
 		<script src="../js/observer.js"/>
 	</body>
 </html>
 <style>
+	html {
+		scroll-snap-type: y mandatory;
+		overflow-y: scroll;
+	}
+	.snap-container {
+		scroll-snap-type: y mandatory;
+		overflow-y: scroll;
+	}
 	body {
 		font-family: 'Manrope', sans-serif;
 	}
