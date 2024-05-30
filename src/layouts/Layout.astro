@@ -3,7 +3,7 @@ const { title, siteName, siteDescription } = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="snap-container">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -20,22 +20,19 @@ const { title, siteName, siteDescription } = Astro.props
 		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<div class="snap-container grid min-h-dvh bg-slate-900 grid-cols-1 place-content-center place-items-center text-gray-200">
+		<div class="grid min-h-dvh bg-slate-900 grid-cols-1 place-content-center place-items-center text-gray-200">
 			<slot />
 		</div>
 		<script src="../js/observer.js"/>
 	</body>
 </html>
 <style>
-	html {
-		scroll-snap-type: y mandatory;
-		overflow-y: scroll;
-	}
 	.snap-container {
 		scroll-snap-type: y mandatory;
-		overflow-y: scroll;
+  	scroll-behavior: smooth !important;
 	}
 	body {
 		font-family: 'Manrope', sans-serif;
+  	scroll-behavior: smooth !important;
 	}
 </style>
