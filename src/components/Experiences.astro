@@ -2,6 +2,9 @@
 const experiences = await Astro.glob("../content/experiences/*.md")
 
 experiences.sort((a, b) => b.frontmatter.order - a.frontmatter.order)
+experiences.forEach(exp => {
+  console.log(exp.frontmatter.skills)
+})
 ---
 
 
@@ -17,6 +20,13 @@ experiences.sort((a, b) => b.frontmatter.order - a.frontmatter.order)
             <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">{exp.frontmatter.title}</h3>
             <h3 class="text-md font-semibold text-gray-900 dark:text-gray-200">{exp.frontmatter.company}</h3>
             <p class="mb-4 text-md font-normal text-gray-500 dark:text-gray-400">{exp.frontmatter.description}</p>
+            <ul class="flex flex-wrap">
+              {
+                exp.frontmatter.skills.map((skill) => (
+                  <li class="mr-2 mb-2 px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md text-sm">{skill}</li>
+                ))
+              }
+            </ul>
           </li>
         ))
       }         
