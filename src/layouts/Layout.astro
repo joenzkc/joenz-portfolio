@@ -1,4 +1,5 @@
 ---
+import "aos/dist/aos.css"
 const { title, siteName, siteDescription } = Astro.props
 ---
 
@@ -27,5 +28,15 @@ const { title, siteName, siteDescription } = Astro.props
 				<slot />
 			</div>
 		</div>
+		<script>
+			import { initAOS } from "../js/aos";
+
+			initAOS();
+		</script>
 	</body>
 </html>
+<style>
+	body {
+		font-family: 'Manrope', sans-serif;
+	}
+</style>
