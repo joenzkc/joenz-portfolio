@@ -28,11 +28,7 @@ const { title, siteName, siteDescription } = Astro.props
 				<slot />
 			</div>
 		</div>
-		<script>
-			import { initAOS } from "../js/aos";
-
-			initAOS();
-		</script>
+		<script src="../js/observer.js"/>
 	</body>
 </html>
 <style>

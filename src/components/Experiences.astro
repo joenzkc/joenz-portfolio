@@ -9,7 +9,7 @@ experiences.forEach(exp => {
 
 
 <section class="min-h-screen w-full text-gray-100 flex flex-col items-center justify-center">
-  <div class="mx-auto max-w-4xl flex flex-col items-center justify-center rounded-lg shadow-lg p-8 bg-slate-800" data-aos="fade-up">
+  <div class="animated mx-auto max-w-4xl flex flex-col items-center justify-center rounded-lg shadow-lg p-8 bg-slate-800">
     <h2 class="text-4xl font-semibold mt-4 md:mt-0">Experiences</h2>
     <ol class="relative border-s border-gray-200 dark:border-gray-700 m-2 leading-relaxed">         
       {
@@ -33,3 +33,17 @@ experiences.forEach(exp => {
   </ol>
   </div>
 </section>
+<style>
+.animated {
+  transform: translateY(50px);
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+}
+
+.isVisible {
+  transform: none;
+     opacity: 1;
+}
+</style>

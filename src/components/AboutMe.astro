@@ -1,5 +1,5 @@
 <section class="min-h-dvh w-full bg-slate-700 text-gray-100 flex items-center justify-center">
-  <div data-aos="fade-up"  class="mx-auto max-w-4xl flex flex-col md:flex-row items-center justify-center px-8 py-4 bg-slate-800 rounded-xl shadow-xl">
+  <div  class="animated mx-auto max-w-4xl flex flex-col md:flex-row items-center justify-center px-8 py-4 bg-slate-800 rounded-xl shadow-xl">
     <div class="flex items-center justify-center">  
       <img src="/profile-picture.jpg" alt="Profile Picture" class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover mx-auto">
     </div>  
@@ -11,3 +11,17 @@
       </div>
   </div>
 </section>
+<style>
+  .animated {
+    transform: translateY(50px);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+  }
+  
+  .isVisible {
+    transform: none;
+       opacity: 1;
+  }
+  </style>
