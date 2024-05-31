@@ -1,30 +1,48 @@
-<section class="snapper min-h-dvh w-full bg-slate-700 text-gray-100 flex items-center justify-center">
-  <div  class="animated mx-auto max-w-4xl flex flex-col md:flex-row items-center justify-center px-8 py-4 bg-slate-800 rounded-xl shadow-xl">
-    <div class="flex items-center justify-center">  
-      <img src="/profile-picture.jpg" alt="Profile Picture" class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover mx-auto">
-    </div>  
-      <div class="max-w-lg text-left text-md space-y-4 p-8 leading-loose">
-          <h2 class="text-4xl font-semibold mt-4 md:mt-0">About me</h2>
-          <p>Hi! I'm Joenz, a software engineer with a passion for learning new technologies and drinking kopi peng 🍵</p>
-          <p>I have had the privilege of interning at GovTech and Flex-Solver, where I got to build cool things and learn a ton 🚀</p>
-          <p>When I'm not coding, you can find me bouldering 🧗, watching anime 📺, or playing computer games 🎮</p>
-      </div>
+<section
+  class="snapper min-h-dvh w-full bg-slate-700 text-gray-100 flex items-center justify-center"
+  id="about"
+>
+  <div
+    class="animated mx-auto max-w-4xl flex flex-col md:flex-row items-center justify-center px-8 py-4 bg-slate-800 rounded-xl shadow-xl"
+  >
+    <div class="flex items-center justify-center">
+      <img
+        src="/profile-picture.jpg"
+        alt="Profile Picture"
+        class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover mx-auto"
+      />
+    </div>
+    <div class="max-w-lg text-left text-md space-y-4 p-8 leading-loose">
+      <h2 class="text-4xl font-semibold mt-4 md:mt-0">About me</h2>
+      <p>
+        Hi! I'm Joenz, a software engineer with a passion for learning new
+        technologies and drinking kopi peng 🍵
+      </p>
+      <p>
+        I have had the privilege of interning at GovTech and Flex-Solver, where
+        I got to build cool things and learn a ton 🚀
+      </p>
+      <p>
+        When I'm not coding, you can find me bouldering 🧗, watching anime 📺,
+        or playing computer games 🎮
+      </p>
+    </div>
   </div>
 </section>
 <style>
-.snapper {
-  scroll-snap-align: start;
-}
-.animated {
-  transform: translateY(50px);
-  opacity: 0;
-  transition-property: transform, opacity;
-  transition-duration: 1s;
-  transition-timing-function: linear;
-}
+  .snapper {
+    scroll-snap-align: start;
+  }
+  .animated {
+    transform: translateY(50px);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+  }
 
-.isVisible {
-  transform: none;
-      opacity: 1;
-}
+  .isVisible {
+    transform: none;
+    opacity: 1;
+  }
 </style>

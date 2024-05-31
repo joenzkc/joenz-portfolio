@@ -1,50 +1,64 @@
 ---
-const experiences = await Astro.glob("../content/experiences/*.md")
+const experiences = await Astro.glob("../content/experiences/*.md");
 
-experiences.sort((a, b) => b.frontmatter.order - a.frontmatter.order)
+experiences.sort((a, b) => b.frontmatter.order - a.frontmatter.order);
 ---
 
-
-<section class="snapper min-h-screen w-full text-gray-100 flex flex-col items-center justify-center">
-  <div class="animated mx-auto max-w-4xl flex flex-col items-center justify-center rounded-lg shadow-lg p-8 bg-slate-800">
+<section
+  class="snapper min-h-screen w-full text-gray-100 flex flex-col items-center justify-center"
+  id="experiences"
+>
+  <div
+    class="animated mx-auto max-w-4xl flex flex-col items-center justify-center rounded-lg shadow-lg p-8 bg-slate-800"
+  >
     <h2 class="text-4xl font-semibold mt-4 md:mt-0">Experiences</h2>
-    <ol class="relative border-s border-gray-200 dark:border-gray-700 m-2 leading-relaxed">         
+    <ol
+      class="relative border-s border-gray-200 dark:border-gray-700 m-2 leading-relaxed"
+    >
       {
         experiences.map((exp) => (
           <li class="mb-10 ms-4">
-            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">{exp.frontmatter.period}</time>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">{exp.frontmatter.title}</h3>
-            <h3 class="text-md font-semibold text-gray-900 dark:text-gray-200">{exp.frontmatter.company}</h3>
-            <p class="mb-4 text-md font-normal text-gray-500 dark:text-gray-400">{exp.frontmatter.description}</p>
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              {exp.frontmatter.period}
+            </time>
+            <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100">
+              {exp.frontmatter.title}
+            </h3>
+            <h3 class="text-md font-semibold text-gray-900 dark:text-gray-200">
+              {exp.frontmatter.company}
+            </h3>
+            <p class="mb-4 text-md font-normal text-gray-500 dark:text-gray-400">
+              {exp.frontmatter.description}
+            </p>
             <ul class="flex flex-wrap">
-              {
-                exp.frontmatter.skills.map((skill) => (
-                  <li class="mr-2 mb-2 px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md text-sm">{skill}</li>
-                ))
-              }
+              {exp.frontmatter.skills.map((skill) => (
+                <li class="mr-2 mb-2 px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-md text-sm">
+                  {skill}
+                </li>
+              ))}
             </ul>
           </li>
         ))
-      }         
-  </ol>
+      }
+    </ol>
   </div>
 </section>
 <style>
-.animated {
-  transform: translateY(50px);
-  opacity: 0;
-  transition-property: transform, opacity;
-  transition-duration: 1s;
-  transition-timing-function: linear;
-}
+  .animated {
+    transform: translateY(50px);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+  }
 
-.isVisible {
-  transform: none;
-     opacity: 1;
-}
+  .isVisible {
+    transform: none;
+    opacity: 1;
+  }
 
-.snapper {
-  scroll-snap-align: start;
-}
+  .snapper {
+    scroll-snap-align: start;
+  }
 </style>

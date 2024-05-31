@@ -1,42 +1,53 @@
 ---
-const { title, siteName, siteDescription } = Astro.props
+import Header from "../components/Header.astro";
+
+const { title, siteName, siteDescription } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="snap-container">
-	<head>
-		<meta charset="utf-8" />
-		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<meta name="description" content={siteDescription} />
-		<meta property="og:site_name" content={siteName} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={siteDescription} />
-		<link rel="sitemap" href="/sitemap-index.xml" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-	</head>
-	<body>
-		<div class="grid min-h-dvh bg-slate-900 grid-cols-1 place-content-center place-items-center text-gray-200">
-			<slot />
-		</div>
-		<script src="../js/observer.js"/>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={siteDescription} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={siteDescription} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Header />
+    <div
+      class="grid min-h-dvh bg-slate-900 grid-cols-1 place-content-center place-items-center text-gray-200"
+    >
+      <slot />
+    </div>
+    <script src="../js/observer.js"></script>
+  </body>
 </html>
 <style>
-	.snap-container {
-		scroll-snap-type: y mandatory;
-  	scroll-behavior: smooth !important;
-	}
-	body {
-		font-family: 'Manrope', sans-serif;
-  	scroll-behavior: smooth !important;
-	}
+  html {
+    scroll-behavior: smooth !important;
+  }
+  .snap-container {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth !important;
+  }
+  body {
+    font-family: "Manrope", sans-serif;
+    scroll-behavior: smooth !important;
+  }
 </style>
